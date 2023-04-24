@@ -1,0 +1,981 @@
+@keyframes dropDown{
+  from{
+    height: 0vh;
+  }
+  to{
+    height: 100vh;
+  }
+}
+@keyframes pop {
+  from{
+    scale: 0;
+  }
+  to{
+    scale: 1;
+  }
+}
+@keyframes searchBarGrow{
+  from{
+    width: 200px;
+  }
+  to{
+    width: 100%;
+  }
+}
+@keyframes suggAppear{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+.dropdown{
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  animation: dropDown .5s;
+}
+.dropdown-item-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  background-color: white;
+  z-index: 5;
+  gap: 5%
+}
+.search-bar-container{
+  flex: 80%;
+  position: relative;
+}
+#search-bar{
+  width: 100%;
+  padding: 10px;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  background-color: rgb(244, 240, 240);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  animation: searchBarGrow .5s;
+}
+.xbtn{
+  position: absolute;
+  cursor: pointer;
+  top: 9px;
+  right: 1%;
+  display: none;
+}
+.cancel-btn-container{
+  padding-right: 50px;
+}
+.cancel-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  animation: pop .1s;
+}
+.result-text{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.no-results-alert{
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  margin-top: 250px;
+}
+.popular-wrapper{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  z-index: 8;
+}
+.popular-item{
+  display: flex;
+  align-items: flex-end;
+  width: 400px;
+  gap: 20px;
+}
+.popular-img{
+  width: 150px;
+  height: 100px;
+}
+.suggestions-wrapper{
+  display: none;
+  flex-direction: column;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sugg-appear{
+  animation: suggAppear 1.5s;
+}
+.suggestion{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid grey;
+  gap: 20px;
+  align-items: flex-end;
+}
+.sugg-img{
+  width: 150px;
+  height: 100px;
+}
+.sugg-desc{
+  width: 300px;
+}
+.pop-desc{
+  width: 200px;
+}
+.sugg-brand, .pop-brand{
+  font-weight: bold;
+  color: gray;
+}
+.sugg-name, .pop-name{
+  font-weight: bold;
+}
+header{
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  height: 80px;
+  z-index: 2;
+  outline: 2px solid #F5F5F5;
+}
+.sneaker-btn{
+  position: relative;
+}
+.sneaker-dropdown{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  top: 21px;
+  display: none;
+}
+.sneaker-dropdown-content{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid black;
+  width: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.sneaker-btn:hover .sneaker-dropdown{
+  display: block;
+}
+.sneaker-dropdown:hover{
+  display: block;
+}
+.bag-icon{
+  padding-top: 4px;
+  position: relative;
+}
+.bag-count-alert{
+  width: 18px;
+  height: 18px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  text-align: center;
+  padding-top: 1px;
+  color: white;
+  font-size: 12px;
+  display: none;
+}
+.search-btn{
+  display: block;
+  width: 200px;
+  height: 41px;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  text-align: left;
+  padding-left: 10px;
+  cursor: pointer;
+  background-color: rgb(244, 240, 240);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: grey;
+}
+.logo{
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+}
+ul{
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+}
+nav ul li {
+  cursor: pointer;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.header{
+  width: 100%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 150px;
+  font-size: 2rem;
+}
+.pg-desc{
+  margin-top: 10px;
+  margin-bottom: 80px;
+  width: 100%;
+  text-align: center;
+  color: grey;
+  font-size: 12px;
+}
+.main-content{
+  width: 100%;
+  display: flex;
+  background-color: #F5F5F5;
+  padding-top: 50px;
+  min-height: 1100px;
+  padding-bottom: 50px;
+  min-height: 3000px;
+}
+.ft{
+  width: 250px;
+  position: absolute;
+  margin-top: -35px;
+  z-index: 1;
+  font-weight: bold;
+}
+.filters{
+  flex: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filter{
+  width: 250px;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+  outline: 1px solid #F5F5F5;
+}
+.downarrow-icon{
+  position: absolute;
+  right: 2px;
+  rotate: 180deg;
+}
+.flip{
+  transform: rotateX(180deg);
+}
+.filter-dropdown{
+  background-color: white;
+  width: 250px;
+  margin-bottom: 20px;
+  display: flex;
+}
+.filter-options{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  padding-left: 30px;
+  max-height: 300px;
+  width: 100%;
+  overflow-y: scroll;
+}
+.model-top-filter{
+  margin-top: 160px;
+}
+.model-top-filter-two{
+  margin-top: 60px;
+}
+.color-top-filter{
+  margin-top: 110px;
+}
+.color-top-filter-two{
+  margin-top: 65px;
+}
+.filter-option{
+  font-size: 11px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.filter-option-btn{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+.display-container{
+  flex: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.hidden-desc{
+  display: none;
+}
+.shoe-container{
+  margin-left: 25px;
+  margin-bottom: 25px;
+  width: 210px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  cursor: pointer;
+  gap: 25px;
+}
+.shoe-desc{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  flex: 50;
+}
+.shoe-img{
+  flex: 50;
+}
+.brand{
+  color: grey;
+}
+.name{
+  font-weight: bold;
+  margin-top: 3px;
+  margin-bottom: 20px;
+  height: 64px;
+}
+.price{
+  font-weight: bolder;
+}
+.footer{
+  width: 100%;
+  min-height: 600px;
+  color: white;
+  background-color: black;
+}
+.footer-header{
+  margin-left: 40px;
+  padding-top: 20px;
+}
+.fh-text a{
+  font-family: "Open-sans", sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+.link-container{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-bottom: 1px solid white;
+  padding-bottom: 40px;
+}
+.footer-links{
+  max-width: 250px;
+  text-align: center;
+}
+.trending-links, .newrel-links, .adidasf-links, .nbf-links, .nikef-links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.footer-links li{
+  cursor: pointer;
+  color: grey;
+}
+.footer-links .link-bold{
+  font-weight: bold;
+  align-self: center;
+  color: white;
+}
+.bottom-footer{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.signup-text{
+  text-align: center;
+  padding-top: 10px;
+  margin-right: 10px;
+}
+#email-input{
+  width: 200px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  font-family: "Open-sans", sans-serif;
+}
+#email-input:placeholder{
+  color: lightgrey;
+}
+.email-submit{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 1px;
+}
+.signup-arrow{
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(271deg) brightness(104%) contrast(101%);
+  width: 15px;
+  padding-top: 5px;
+}
+#email-input, .email-submit{
+  display: block;
+}
+.footer-email-signup{
+  display: flex;
+  margin-top: 20px;
+  height: 40px;
+  position: relative;
+}
+.submit-message{
+  position: absolute;
+  bottom: -25px;
+  font-size: 12px;
+  right: 40px;
+  display: none;
+  width: 200px;
+}
+.footer-socialmedia{
+  display: flex;
+  height: 40px;
+}
+.smicon{
+  width: 40px;
+  cursor: pointer;
+}
+.tiktok, .youtube, .facebook{
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(271deg) brightness(104%) contrast(101%);
+}
+.copyright{
+  margin-top: 80px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.dunk-blackwhite .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/nikeDunkBW.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.airforce-white .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/nikeAF1W.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.airmax-silverbullet .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/nikeAM97SB.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.airvapormax-tripleblack .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/nikeVMBlack.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.jordan4-coolgrey .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/jordan4CoolGrey.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.jordan11-unc .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/jordan11LowUNC.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.jordan1-bred .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/jordan1Bred.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.jordan12-OVO .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/jordan12OVO.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezy500-granite .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/yeezy500Granite.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezy350-zebra .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/yeezy350Zebra.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezy700-wr .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/yeezy700WaveRunner.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezyslide-bone .shoe-img{
+background-image: url("../brandpages/previmages/adidaspi/yeezySlideBone.jpeg");
+background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.adidasnmdhr-black .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/adidasxpharellHRBlack.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.adidasnmdrun-black .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/adidasNMDR1PKOG.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.adidasub5-oreo .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/adidasUltraboost5.0Oreo.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.adidasforum-ct .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/adidasxbadbunnyForum.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.whitegreen-550 .shoe-img{
+background-image:url("../brandpages/previmages/nbpi/nb550WhiteGreen.jpeg");
+background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.blackgrey-2002RPP .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb2002rppblackgrey.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.wi-997h .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb997workersincense.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.whiteublue-550 .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb550UniversityBlue.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.lny-2002RPP .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb2002rLunarNewYear.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.nc-990v3 .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb990v3NimbusCloud.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.bt-1080v12 .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb1080BlackThunder.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.ann-990v3 .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb990v3anniversary.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.jordan4-oreo .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/jordan4Oreo.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.jordan5-unc .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/jordan5UNC.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.wmnsdunk-sandrift .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/wnsnikedunkSandrift.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.j1lowrmocha-sandrift .shoe-img{
+  background-image: url("../brandpages/previmages/nikepi/travisScottRMocha.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezyslide-flax .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/yeezySlideFlax.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezy350-creamwhite .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/yeezy350Cream.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezy500-blush .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/yeezy500Blush.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.yeezy350-pirateblack .shoe-img{
+  background-image: url("../brandpages/previmages/adidaspi/yeezy350PirateBlack.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.kithpistachio-2002R .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb993Pistachio.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.grey-574 .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb574Grey.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.seasalt-2002RPP .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb2002rppSeaSalt.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+.blackwhite-574 .shoe-img{
+  background-image: url("../brandpages/previmages/nbpi/nb574BlackWhite.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+}
+
+
+
+.dunkblackwhite-sugg{
+  background-image: url(../brandpages/previmages/nikepi/nikeDunkBW.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.afwhite-sugg{
+  background-image: url(../brandpages/previmages/nikepi/nikeAF1W.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.aj4coolgrey-sugg{
+  background-image: url(../brandpages/previmages/nikepi/jordan4CoolGrey.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.am97silverbullet-sugg{
+  background-image: url(../brandpages/previmages/nikepi/nikeAM97SB.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.aj11lunc-sugg{
+  background-image: url(../brandpages/previmages/nikepi/jordan11LowUNC.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.aj12white-sugg{
+  background-image: url(../brandpages/previmages/nikepi/jordan12OVO.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.aj1bred-sugg{
+  background-image: url(../brandpages/previmages/nikepi/jordan1Bred.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.vm3tipleblack-sugg{
+  background-image: url(../brandpages/previmages/nikepi/nikeVMBlack.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.jordan4oreo-img, .aj4whiteoreo-sugg{
+  background-image: url(../brandpages/previmages/nikepi/jordan4Oreo.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.jordan5unc-img, .aj5unc-sugg{
+  background-image: url(../brandpages/previmages/nikepi/jordan5UNC.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.travisrmocha-img, .ajtravisscottrmocha-sugg{
+  background-image: url(../brandpages/previmages/nikepi/travisScottRMocha.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.wmnsnikedunksandrift-img, .wmsdunksandrift-sugg{
+  background-image: url(../brandpages/previmages/nikepi/wnsnikedunkSandrift.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezy500granite-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezy500Granite.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezy350zebra-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezy350Zebra.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.adidasnmdrunblack-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/adidasNMDR1PKOG.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezyslidebone-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezySlideBone.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.adidasnmdhrblack-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/adidasxpharellHRBlack.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezy700wr-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezy700WaveRunner.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.adidasub5oreo-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/adidasUltraboost5.0Oreo.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.adidasforumct-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/adidasxbadbunnyForum.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezyslideflax-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezySlideFlax.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezy350creamwhite-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezy350Cream.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezy500blush-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezy500Blush.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezy350pirateblack-sugg{
+  background-image: url(../brandpages/previmages/adidaspi/yeezy350PirateBlack.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.whitegreen550-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb550WhiteGreen.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.blackgrey2002RPP-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb2002rppblackgrey.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.wi997h-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb997workersincense.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.whiteublue550-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb550UniversityBlue.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.ann990v3-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb990v3anniversary.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.nc990v3-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb990v3NimbusCloud.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.bt1080v12-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb1080BlackThunder.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.lny2002RPP-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb2002rLunarNewYear.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.kithpistachio2002R-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb993Pistachio.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.grey574-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb574Grey.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.seasalt2002RPP-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb2002rppSeaSalt.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.blackwhite574-sugg{
+  background-image: url(../brandpages/previmages/nbpi/nb574BlackWhite.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yzyslideflax-img{
+  background-image: url(../brandpages/previmages/adidaspi/yeezySlideFlax.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.nikedunkblackwhite-img{
+  background-image: url(../brandpages/previmages/nikepi/nikeDunkBW.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.nb993pistachio-img{
+  background-image: url(../brandpages/previmages/nbpi/nb993Pistachio.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.nb574grey-img{
+  background-image: url(../brandpages/previmages/nbpi/nb574Grey.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+.yeezy350cream-img{
+  background-image: url(../brandpages/previmages/adidaspi/yeezy350Cream.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
